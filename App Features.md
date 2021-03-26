@@ -17,5 +17,5 @@ ______________
 - **Animations**
   - Share and save
 - **Appearance**
-- Light and dark mode
-- Accent color changer (SwiftUI ColorPicker)
+  - ~Light and dark mode~
+  - ~Accent color changer (SwiftUI ColorPicker)~
