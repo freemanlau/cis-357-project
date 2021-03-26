@@ -16,4 +16,6 @@ ______________
   - Social media share
 - **Animations**
   - Share and save
-- **Light and dark mode**
+- **Appearance**
+- Light and dark mode
+- Accent color changer (SwiftUI ColorPicker)
