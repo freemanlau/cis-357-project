@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LoginView: View {
-    let loginFieldColor = Color(red: 239/255, green: 243/255, blue: 244/255, opacity: 1)
-    
     @State var username: String = ""
     @State var password: String = ""
     
@@ -33,9 +31,29 @@ struct LoginView: View {
                 // Username field
                 TextField("Username", text: $username)
                     .padding()
-                    .background(loginFieldColor)
+                    .background(Color.init(UIColor.white))
                     .cornerRadius(5)
-                    .padding(20)
+                    .padding(.leading, 25)
+                    .padding(.trailing, 25)
+                    .padding(.bottom, 10)
+                
+                // Password field
+                SecureField("Password", text: $password)
+                    .padding()
+                    .background(Color.init(UIColor.white))
+                    .cornerRadius(5)
+                    .padding(.leading, 25)
+                    .padding(.top, 10)
+                    .padding(.trailing, 25)
+                    .padding(.bottom, 25)
+                
+                Text("LOGIN")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width: 220, height: 60)
+                    .background(Color.init(UIColor(red: 1.00, green: 0.16, blue: 0.40, alpha: 1.00)))
+                    .cornerRadius(15)
             }
         }
     }
