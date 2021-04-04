@@ -14,14 +14,24 @@ struct ContentView: View {
     
     @State private var accentColor = Color.blue
     
+    var categories: [String] = ["Business", "Entertainment", "Sports", "Pop culture"]   // TODO: Replace with categories from news API
+    
     var body: some View {
         TabView {
-            Text("Home")
-                .padding()
-                .tabItem {
-                    Image(systemName: "antenna.radiowaves.left.and.right")
-                    Text("News")
+            NavigationView {
+                List {
+                    ForEach(categories, id: \.self) { key in
+                        NewsRow(categoryName: key)
+                    }
                 }
+                .navigationTitle("Headlines")
+            }
+            .tabItem {
+                Image(systemName: "antenna.radiowaves.left.and.right")
+                Text("News")
+            }
+            
+            
             Text("Favorites")
                 .tabItem {
                     Image(systemName: "heart.fill")
@@ -88,6 +98,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            ContentView()
+        }
     }
 }
