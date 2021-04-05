@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var showMainTabView: Bool = false
     @State var username: String = ""
     @State var password: String = ""
+    @State var showMainTabView: Bool = false
     
     fileprivate func loginButtonContent() -> some View {
         return Text("LOGIN")
@@ -21,6 +21,7 @@ struct LoginView: View {
             .background(Color.init(UIColor(red: 1.00, green: 0.16, blue: 0.40, alpha: 1.00)))
             .cornerRadius(15)
     }
+    
     
     var body: some View {
         ZStack {
@@ -58,10 +59,17 @@ struct LoginView: View {
                     .padding(.trailing, 25)
                     .padding(.bottom, 25)
                 
-                NavigationLink(destination: MainTabView()) {
+                NavigationLink(destination: MainTabView(), isActive: $showMainTabView) {
+                    Text("")
+                }
+                Button(action: {
+                    if username == "admin" && password == "123" {
+                        self.showMainTabView = true
+                    }
+                }) {
                     loginButtonContent()
                 }
-            
+                
             }
         }
     }
