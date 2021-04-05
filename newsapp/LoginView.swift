@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State var showMainTabView: Bool = false
     @State var username: String = ""
     @State var password: String = ""
+    
+    fileprivate func loginButtonContent() -> some View {
+        return Text("LOGIN")
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(width: 220, height: 60)
+            .background(Color.init(UIColor(red: 1.00, green: 0.16, blue: 0.40, alpha: 1.00)))
+            .cornerRadius(15)
+    }
     
     var body: some View {
         ZStack {
@@ -47,13 +58,10 @@ struct LoginView: View {
                     .padding(.trailing, 25)
                     .padding(.bottom, 25)
                 
-                Text("LOGIN")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width: 220, height: 60)
-                    .background(Color.init(UIColor(red: 1.00, green: 0.16, blue: 0.40, alpha: 1.00)))
-                    .cornerRadius(15)
+                NavigationLink(destination: MainTabView()) {
+                    loginButtonContent()
+                }
+            
             }
         }
     }
