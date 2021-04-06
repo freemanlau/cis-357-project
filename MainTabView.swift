@@ -18,7 +18,6 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-
             NavigationView {
                 List {
                     ForEach(categories, id: \.self) { key in
@@ -26,18 +25,20 @@ struct MainTabView: View {
                     }
                 }
                 .navigationTitle("Headlines")
-            }.navigationBarHidden(true)
+            }
+            .navigationBarHidden(true)
             .tabItem {
                 Image(systemName: "antenna.radiowaves.left.and.right")
                 Text("News")
             }
-
-
+            
+            
             Text("Favorites")
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Favorites")
                 }
+                .navigationBarHidden(true)
             NavigationView {
                 Form {
                     Section(header: Text("View Settings")) {
@@ -50,7 +51,7 @@ struct MainTabView: View {
                                 setupColorScheme()
                             })
                     }
-
+                    
                     Section {
                         Button("Remove all favorites"){
                             showingAlert = true
@@ -74,6 +75,7 @@ struct MainTabView: View {
                 Image(systemName: "gear")
                 Text("Settings")
             }
+            .navigationBarHidden(true)
         }
         
     }
@@ -89,10 +91,10 @@ struct MainTabView: View {
             window?.overrideUserInterfaceStyle = .light
             window?.tintColor = UIColor(accentColor)
         }
-
+        
     }
     
-    }
+}
 
 
 
