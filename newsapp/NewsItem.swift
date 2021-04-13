@@ -12,6 +12,9 @@ import Combine
 import SDWebImageSwiftUI
 
 struct NewsItem: View {
+    @State var isFavorite = false
+    @State var imageURL: String = ""
+    
     var body: some View {
         VStack(alignment: .leading) {
             WebImage(url: URL(string: "https://nokiatech.github.io/heif/content/images/ski_jump_1440x960.heic"))
@@ -31,10 +34,22 @@ struct NewsItem: View {
                 .scaledToFit()
                 .cornerRadius(30)
                 .overlay(RoundedRectangle(cornerRadius: 30)
-                .stroke(Color.accentColor, lineWidth: 2.5))
+                            .stroke(Color.accentColor, lineWidth: 2.5))
                 .shadow(radius: 10)
-            Text("Put Headline here")
-                .font(.caption)
+                .overlay(Group {
+                    ZStack {
+                        LikeButton().padding(.trailing, 20.0)
+                            .frame(height: 30.0)
+                            .alignmentGuide(.trailing) { $0[.bottom] }
+                            
+                        
+                    }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    Text("Put Headline here")
+                        .font(.custom("Cochin", size: 25))
+                        .fontWeight(.heavy)
+                        .padding(15)
+                })
+            
         }
         .padding(.leading, 15)
     }
@@ -42,7 +57,9 @@ struct NewsItem: View {
 
 struct NewsItem_Preview: PreviewProvider {
     static var previews: some View {
-        NewsItem()
+        Group {
+            NewsItem()
+        }
     }
 }
 
