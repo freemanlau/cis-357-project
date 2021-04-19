@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1749C89C7912EE9F699813A9 /* Pods_newsapp_newsappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1ADF2A3028AC4DC7D181C7 /* Pods_newsapp_newsappUITests.framework */; };
+		2119F54F2623EDDE002BD653 /* CirclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2119F54E2623EDDE002BD653 /* CirclesView.swift */; };
+		213D3BF02623E84100E9475C /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D3BEF2623E84100E9475C /* LikeButton.swift */; };
 		21727C52260954330062B07B /* newsappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21727C51260954330062B07B /* newsappApp.swift */; };
 		21727C54260954330062B07B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21727C53260954330062B07B /* ContentView.swift */; };
 		21727C56260954370062B07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21727C55260954370062B07B /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2119F54E2623EDDE002BD653 /* CirclesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclesView.swift; sourceTree = "<group>"; };
+		213D3BEF2623E84100E9475C /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		21727C4E260954330062B07B /* newsapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21727C51260954330062B07B /* newsappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsappApp.swift; sourceTree = "<group>"; };
 		21727C53260954330062B07B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213D3BF42623E95B00E9475C /* LikeButton */ = {
+			isa = PBXGroup;
+			children = (
+				213D3BEF2623E84100E9475C /* LikeButton.swift */,
+				2119F54E2623EDDE002BD653 /* CirclesView.swift */,
+			);
+			path = LikeButton;
+			sourceTree = "<group>";
+		};
 		21727C45260954330062B07B = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +159,7 @@
 				21727C55260954370062B07B /* Assets.xcassets */,
 				21727C5A260954370062B07B /* Info.plist */,
 				21727C57260954370062B07B /* Preview Content */,
+				213D3BF42623E95B00E9475C /* LikeButton */,
 			);
 			path = newsapp;
 			sourceTree = "<group>";
@@ -464,13 +478,18 @@
 			files = (
 				2EA561AD26126ACE00600030 /* LoginView.swift in Sources */,
 				C6D927272618F6BC00745E80 /* NewsItem.swift in Sources */,
+				2119F54F2623EDDE002BD653 /* CirclesView.swift in Sources */,
 				21727C54260954330062B07B /* ContentView.swift in Sources */,
 				2E2107EF261BE8B400EC161F /* AccountCreationView.swift in Sources */,
 				C6D9272C2619264900745E80 /* NewsRow.swift in Sources */,
 				21727C52260954330062B07B /* newsappApp.swift in Sources */,
 				2E2107D0261BA9A600EC161F /* MainTabView.swift in Sources */,
+<<<<<<< HEAD
 				2E2107D5261BD89C00EC161F /* User.swift in Sources */,
 				2E2107EA261BE3E700EC161F /* AccountCreationViewModel.swift in Sources */,
+=======
+				213D3BF02623E84100E9475C /* LikeButton.swift in Sources */,
+>>>>>>> bd12c2b8ee349c4c064f3c88214d06359ea9d515
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
