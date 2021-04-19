@@ -21,10 +21,9 @@ struct NewsRow: View {
                 .padding(.top, 5)
 
             ScrollView(.horizontal, showsIndicators: false) {
-                
                     HStack(alignment: .top, spacing: 0) {
                         ForEach(results.datas) {i in
-                            NewsItem(title: i.title)
+                            NewsItem(title: i.title, image: i.image)
                         
                     }
     
@@ -35,6 +34,7 @@ struct NewsRow: View {
         }
     }
 }
+
 
 struct NewsRow_Preview: PreviewProvider {
 
@@ -70,7 +70,7 @@ class getData : ObservableObject {
                 let title = i.1["title"].stringValue
                 let description = i.1["description"].stringValue
                 let url = i.1["url"].stringValue
-                let image = i.1["image"].stringValue
+                let image = i.1["urlToImage"].stringValue
                 let id = i.1["publishedAt"].stringValue
                 DispatchQueue.main.async {
                     self.datas.append(dataType(id: id, title: title, description: description, url: url, image: image))
