@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var accountCreation = AccountCreationViewModel()
+    var user = User()
     
     var body: some View {
         NavigationView {
             VStack {
                 LoginView()
+                    .environmentObject(accountCreation)
+                //AccountCreationView()
+                //    .environmentObject(accountCreation)
+        
             }
         }
     }

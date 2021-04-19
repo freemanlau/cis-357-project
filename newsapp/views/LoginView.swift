@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var accountCreation: AccountCreationViewModel
     @State var username: String = ""
     @State var password: String = ""
     @State var showMainTabView: Bool = false
@@ -41,7 +42,7 @@ struct LoginView: View {
                     .padding(.bottom, 70)
                 
                 // Username field
-                TextField("Username", text: $username)
+                TextField("Username", text: $accountCreation.username)
                     .padding()
                     .background(Color.init(UIColor.white))
                     .cornerRadius(5)
@@ -50,7 +51,7 @@ struct LoginView: View {
                     .padding(.bottom, 10)
                 
                 // Password field
-                SecureField("Password", text: $password)
+                SecureField("Password", text: $accountCreation.password)
                     .padding()
                     .background(Color.init(UIColor.white))
                     .cornerRadius(5)
@@ -59,16 +60,24 @@ struct LoginView: View {
                     .padding(.trailing, 25)
                     .padding(.bottom, 25)
                 
+                // Login button
                 NavigationLink(destination: MainTabView(), isActive: $showMainTabView) {
                     Text("")
                 }
                 Button(action: {
-                    if username == "admin" && password == "123" {
+                    if accountCreation.username == "admin" && accountCreation.password == "123" {
+                        print("login")
                         self.showMainTabView = true
                     }
                 }) {
                     loginButtonContent()
                 }
+                
+                // Acount creation link
+                NavigationLink(destination: AccountCreationView()) {
+                    Text("Don't have an account? Create one here.")
+                }
+                
                 
             }
         }
