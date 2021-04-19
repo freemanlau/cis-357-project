@@ -6,8 +6,7 @@
 //
 
 import SwiftUI
-import SwiftyJSON
-import SDWebImageSwiftUI
+
 
 struct ContentView: View {
     @StateObject var accountCreation = AccountCreationViewModel()
@@ -24,14 +23,6 @@ struct ContentView: View {
             }
         }
     }
-}
-
-struct dataType : Identifiable {
-    var id : String
-    var title : String
-    var description : String
-    var url : String
-    var image : String
 }
 
 

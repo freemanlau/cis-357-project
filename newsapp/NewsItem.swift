@@ -14,6 +14,7 @@ import SDWebImageSwiftUI
 struct NewsItem: View {
     @State var isFavorite = false
     @State var imageURL: String = ""
+    @State var title: String = ""
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -44,7 +45,7 @@ struct NewsItem: View {
                             
                         
                     }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                    Text("Put Headline here")
+                    Text(self.title)
                         .font(.custom("Cochin", size: 25))
                         .fontWeight(.heavy)
                         .padding(15)
