@@ -484,12 +484,12 @@
 				C6D9272C2619264900745E80 /* NewsRow.swift in Sources */,
 				21727C52260954330062B07B /* newsappApp.swift in Sources */,
 				2E2107D0261BA9A600EC161F /* MainTabView.swift in Sources */,
-<<<<<<< HEAD
+
 				2E2107D5261BD89C00EC161F /* User.swift in Sources */,
 				2E2107EA261BE3E700EC161F /* AccountCreationViewModel.swift in Sources */,
-=======
+
 				213D3BF02623E84100E9475C /* LikeButton.swift in Sources */,
->>>>>>> bd12c2b8ee349c4c064f3c88214d06359ea9d515
+ bd12c2b8ee349c4c064f3c88214d06359ea9d515
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
