@@ -13,7 +13,7 @@ struct MainTabView: View {
     @State private var darkMode = false
     @State private var accentColor = Color.blue
     
-    var categories: [String] = ["business", "entertainment", "sports"]   // TODO: Replace with categories from news API
+    var categories: [String] = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]   // TODO: Replace with categories from news API
     
     var body: some View {
         TabView {

@@ -35,7 +35,7 @@ struct NewsRow: View {
                     
                 }
                     .onAppear {
-                        results.get(category: category)
+                        results.get(category: category.lowercased())
                     }
             }
             .frame(height: 185)
