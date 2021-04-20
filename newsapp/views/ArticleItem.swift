@@ -18,32 +18,25 @@ struct ArticleItem: View {
     @State var articleImage: String = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            if articleImage != "" {
-                WebImage(url: URL(string: articleImage), options: .highPriority)
-                    .onSuccess {image, data, cacheType in }
-                    .resizable()
-                    .frame(width: 100, height: 135)
-                    .scaledToFit()
-                    .cornerRadius(30)
-                    .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.accentColor, lineWidth: 2.5))
-                    .shadow(radius: 10)
-                Group {
-                    ZStack {
-                        LikeButton().padding(.trailing, 20.0)
-                            .frame(height: 30.0)
-                            .alignmentGuide(.trailing) { $0[.bottom] }
-                            
+            VStack(alignment: .leading) {
+                if articleImage != "" {
+                    WebImage(url: URL(string: articleImage), options: .highPriority)
+                        .onSuccess {image, data, cacheType in }
+                        .resizable()
+                        .frame(width: 250, height: 130)
+                        .scaledToFit()
+                        .cornerRadius(30)
+                        .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.accentColor, lineWidth: 2.5))
+                        .shadow(radius: 10)
+                    
+                    LikeButton().frame(height: 30.0)
+                                .alignmentGuide(.leading) { $0[.bottom] }
                         
-                    }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                     Text(articleTitle)
-                        .font(.custom("Cochin", size: 25))
-                        .fontWeight(.heavy)
-                        .padding(15)
+                        .lineLimit(3)
                 }
             }
-            
-        }
-        .padding(.leading, 15)
+            .padding(.top, 10)
+            .padding(.trailing, 20)
     }
 }
