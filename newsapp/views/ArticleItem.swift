@@ -28,12 +28,15 @@ struct ArticleItem: View {
                         .cornerRadius(30)
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.accentColor, lineWidth: 2.5))
                         .shadow(radius: 10)
-                    
-                    LikeButton().frame(height: 30.0)
-                                .alignmentGuide(.leading) { $0[.bottom] }
+                    HStack {
+                        LikeButton().frame(height: 30.0)
+                            .alignmentGuide(.leading) { $0[.bottom] }
                         
-                    Text(articleTitle)
-                        .lineLimit(3)
+                        Text(articleTitle)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(3)
+                    }
+                    .frame(width: 300)
                 }
             }
             .padding(.top, 10)
