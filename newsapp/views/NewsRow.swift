@@ -10,12 +10,16 @@ import SwiftyJSON
 import SDWebImageSwiftUI
 
 struct NewsRow: View {
-    var categoryName: String
-    @ObservedObject var results = getData()
+    var category: String
+    @StateObject var results = getData()
+
+    
+
+    
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(categoryName)
+            Text(category)
                 .font(.headline)
                 .padding(.leading, 15)
                 .padding(.top, 5)
@@ -24,24 +28,21 @@ struct NewsRow: View {
                     HStack(alignment: .top, spacing: 0) {
                         ForEach(results.datas) {i in
                             NewsItem(title: i.title, image: i.image)
+
                         
                     }
     
                     
                 }
+                    .onAppear {
+                        results.get(category: category)
+                    }
             }
             .frame(height: 185)
         }
     }
 }
 
-
-struct NewsRow_Preview: PreviewProvider {
-
-    static var previews: some View {
-        NewsRow(categoryName: "Cool")
-    }
-}
 
 struct dataType : Identifiable {
     var id : String
@@ -54,8 +55,8 @@ struct dataType : Identifiable {
 class getData : ObservableObject {
     @Published var datas = [dataType]()
     
-    init() {
-        let source = "https://newsapi.org/v2/top-headlines?country=us&apiKey=2965253d7ca64c63a58435403b289f9b"
+    func get(category: String) {
+        let source = "https://newsapi.org/v2/top-headlines?country=us&category=\(category)&apiKey=2965253d7ca64c63a58435403b289f9b"
         let url = URL(string: source)!
         let session = URLSession(configuration: .default)
         session.dataTask(with: url) { (data, _,err) in

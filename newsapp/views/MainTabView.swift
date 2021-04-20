@@ -10,19 +10,17 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var showingAlert = false
-    
     @State private var darkMode = false
-    
     @State private var accentColor = Color.blue
     
-    var categories: [String] = ["Business", "Entertainment", "Sports", "Pop culture"]   // TODO: Replace with categories from news API
+    var categories: [String] = ["business", "entertainment", "sports"]   // TODO: Replace with categories from news API
     
     var body: some View {
         TabView {
             NavigationView {
                 List {
                     ForEach(categories, id: \.self) { key in
-                        NewsRow(categoryName: key)
+                        NewsRow(category: key)
                     }
                 }
                 .navigationTitle("Headlines")

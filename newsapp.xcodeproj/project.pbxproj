@@ -130,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				2E2107D4261BD89C00EC161F /* User.swift */,
-				2E2107CF261BA9A600EC161F /* MainTabView.swift */,
 				2E2107D9261BDFF500EC161F /* GoogleService-Info.plist */,
 				21727C50260954330062B07B /* newsapp */,
 				21727C62260954370062B07B /* newsappTests */,
@@ -158,8 +157,6 @@
 				2E2107E8261BE3BA00EC161F /* view_models */,
 				21727C51260954330062B07B /* newsappApp.swift */,
 				21727C53260954330062B07B /* ContentView.swift */,
-				C6D9272B2619264900745E80 /* NewsRow.swift */,
-				C6D927262618F6BC00745E80 /* NewsItem.swift */,
 				21727C55260954370062B07B /* Assets.xcassets */,
 				21727C5A260954370062B07B /* Info.plist */,
 				21727C57260954370062B07B /* Preview Content */,
@@ -205,6 +202,9 @@
 		2E2107F3261BE8BE00EC161F /* views */ = {
 			isa = PBXGroup;
 			children = (
+				C6D927262618F6BC00745E80 /* NewsItem.swift */,
+				C6D9272B2619264900745E80 /* NewsRow.swift */,
+				2E2107CF261BA9A600EC161F /* MainTabView.swift */,
 				2EA561AC26126ACE00600030 /* LoginView.swift */,
 				2E2107EE261BE8B400EC161F /* AccountCreationView.swift */,
 			);
