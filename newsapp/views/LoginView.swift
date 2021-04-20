@@ -61,7 +61,7 @@ struct LoginView: View {
                     .padding(.bottom, 25)
                 
                 // Login button
-                NavigationLink(destination: MainTabView(), isActive: $showMainTabView) {
+                NavigationLink(destination: MainView(), isActive: $showMainTabView) {
                     Text("")
                 }
                 Button(action: {

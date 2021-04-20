@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  newsapp
 //
 //  Created by AJ Natzic on 3/22/21.
@@ -8,19 +8,19 @@
 import SwiftUI
 
 
-struct MainTabView: View {
+struct MainView: View {
     @State private var showingAlert = false
     @State private var darkMode = false
     @State private var accentColor = Color.blue
     
-    var categories: [String] = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]   // TODO: Replace with categories from news API
+    var categories: [String] = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]
     
     var body: some View {
         TabView {
             NavigationView {
                 List {
                     ForEach(categories, id: \.self) { key in
-                        NewsRow(category: key)
+                        ArticlesRow(category: key)
                     }
                 }
                 .navigationTitle("Headlines")
@@ -90,19 +90,5 @@ struct MainTabView: View {
             window?.overrideUserInterfaceStyle = .light
             window?.tintColor = UIColor(accentColor)
         }
-        
-    }
-    
-}
-
-
-
-struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            MainTabView()
-            MainTabView()
-        }
     }
 }
-

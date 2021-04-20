@@ -1,5 +1,5 @@
 //
-//  NewsItem.swift
+//  ArticleItem.swift
 //  newsapp
 //
 //  Created by AJ Natzic on 4/3/21.
@@ -11,16 +11,16 @@ import SwiftUI
 import Combine
 import SDWebImageSwiftUI
 
-struct NewsItem: View {
+struct ArticleItem: View {
     @State var isFavorite = false
     @State var imageURL: String = ""
-    @State var title: String = ""
-    @State var image: String = ""
+    @State var articleTitle: String = ""
+    @State var articleImage: String = ""
     
     var body: some View {
         VStack(alignment: .leading) {
-            if image != "" {
-                WebImage(url: URL(string: image), options: .highPriority)
+            if articleImage != "" {
+                WebImage(url: URL(string: articleImage), options: .highPriority)
                     .onSuccess {image, data, cacheType in }
                     .resizable()
                     .frame(width: 100, height: 135)
@@ -36,7 +36,7 @@ struct NewsItem: View {
                             
                         
                     }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                    Text(self.title)
+                    Text(articleTitle)
                         .font(.custom("Cochin", size: 25))
                         .fontWeight(.heavy)
                         .padding(15)
@@ -47,12 +47,3 @@ struct NewsItem: View {
         .padding(.leading, 15)
     }
 }
-
-struct NewsItem_Preview: PreviewProvider {
-    static var previews: some View {
-        Group {
-            NewsItem()
-        }
-    }
-}
-
