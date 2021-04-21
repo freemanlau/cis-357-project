@@ -1,17 +1,16 @@
 //
-//  ArticleItem.swift
+//  ArticlePreview.swift
 //  newsapp
 //
 //  Created by AJ Natzic on 4/3/21.
 //
 
 import Foundation
-
 import SwiftUI
 import Combine
 import SDWebImageSwiftUI
 
-struct ArticleItem: View {
+struct ArticlePreview: View {
     @State var isFavorite = false
     @State var imageURL: String = ""
     @State var articleTitle: String = ""

@@ -22,8 +22,8 @@ struct ArticlesRow: View {
             ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .center, spacing: 25) {
                         ForEach(articleRetriever.response) {response in
-                            NavigationLink(destination: Article(image: response.image)) {
-                                ArticleItem(articleTitle: response.title, articleImage: response.image).accentColor(Color.black)
+                            NavigationLink(destination: Article(articleUrl: response.url)) {
+                                ArticlePreview(articleTitle: response.title, articleImage: response.image).accentColor(Color.black)
                             }
                         }
                     }
@@ -39,7 +39,7 @@ struct ArticlesRow: View {
 struct ResponseStructure: Identifiable {
     var id: String
     var title: String
-    var description: String
+    var content: String
     var url: String
     var image: String
 }
@@ -60,12 +60,12 @@ class ArticleRetriever: ObservableObject {
             let json = try! JSON(data: data!)
             for dataType in json["articles"] {
                 let title = dataType.1["title"].stringValue
-                let description = dataType.1["description"].stringValue
+                let content = dataType.1["content"].stringValue
                 let url = dataType.1["url"].stringValue
                 let image = dataType.1["urlToImage"].stringValue
                 let id = dataType.1["publishedAt"].stringValue
                 DispatchQueue.main.async {
-                    self.response.append(ResponseStructure(id: id, title: title, description: description, url: url, image: image))
+                    self.response.append(ResponseStructure(id: id, title: title, content: content, url: url, image: image))
                 }
             }
         }.resume()
