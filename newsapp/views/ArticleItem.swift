@@ -23,23 +23,20 @@ struct ArticleItem: View {
                     WebImage(url: URL(string: articleImage), options: .highPriority)
                         .onSuccess {image, data, cacheType in }
                         .resizable()
-                        .frame(width: 250, height: 130)
+                        .frame(width: 275, height: 150)
                         .scaledToFit()
                         .cornerRadius(30)
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.accentColor, lineWidth: 2.5))
-                        .shadow(radius: 10)
-                    HStack {
-                        LikeButton().frame(height: 30.0)
-                            .alignmentGuide(.leading) { $0[.bottom] }
+                    HStack(alignment: .bottom) {
+                        LikeButton()
                         
                         Text(articleTitle)
                             .multilineTextAlignment(.leading)
                             .lineLimit(3)
                     }
-                    .frame(width: 300)
+                    .frame(width: 275)
+                    .padding(.bottom, 25)
                 }
             }
-            .padding(.top, 10)
-            .padding(.trailing, 20)
     }
 }

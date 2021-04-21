@@ -17,11 +17,10 @@ struct ArticlesRow: View {
         VStack(alignment: .leading) {
             Text(category.uppercased())
                 .font(.headline)
-                .padding(.leading, 15)
                 .padding(.top, 5)
 
             ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .center, spacing: 15) {
+                    HStack(alignment: .center, spacing: 25) {
                         ForEach(articleRetriever.response) {response in
                             ArticleItem(articleTitle: response.title, articleImage: response.image)
                         }
@@ -30,7 +29,7 @@ struct ArticlesRow: View {
                         articleRetriever.get(category: category.lowercased())
                     }
             }
-            .frame(height: 250)
+            .frame(height: 275)
         }
     }
 }
