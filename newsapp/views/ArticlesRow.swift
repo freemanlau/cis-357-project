@@ -12,7 +12,7 @@ import SDWebImageSwiftUI
 struct ArticlesRow: View {
     var category: String
     @StateObject var articleRetriever = ArticleRetriever()
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(category.uppercased())
@@ -22,7 +22,9 @@ struct ArticlesRow: View {
             ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .center, spacing: 25) {
                         ForEach(articleRetriever.response) {response in
-                            ArticleItem(articleTitle: response.title, articleImage: response.image)
+                            NavigationLink(destination: Article(image: response.image)) {
+                                ArticleItem(articleTitle: response.title, articleImage: response.image).accentColor(Color.black)
+                            }
                         }
                     }
                     .onAppear {

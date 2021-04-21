@@ -18,25 +18,25 @@ struct ArticleItem: View {
     @State var articleImage: String = ""
     
     var body: some View {
-            VStack(alignment: .leading) {
-                if articleImage != "" {
-                    WebImage(url: URL(string: articleImage), options: .highPriority)
-                        .onSuccess {image, data, cacheType in }
-                        .resizable()
-                        .frame(width: 275, height: 150)
-                        .scaledToFit()
-                        .cornerRadius(30)
-                        .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.accentColor, lineWidth: 2.5))
-                    HStack(alignment: .bottom) {
-                        LikeButton()
-                        
-                        Text(articleTitle)
-                            .multilineTextAlignment(.leading)
-                            .lineLimit(3)
-                    }
-                    .frame(width: 275)
-                    .padding(.bottom, 25)
-                }
+        VStack(alignment: .leading) {
+            if articleImage != "" {
+                WebImage(url: URL(string: articleImage), options: .highPriority)
+                    .onSuccess {image, data, cacheType in }
+                    .resizable()
+                    .frame(width: 275, height: 150)
+                    .scaledToFit()
+                    .cornerRadius(30)
+                    .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.accentColor, lineWidth: 2.5))
             }
+            HStack(alignment: .bottom) {
+                LikeButton()
+                
+                Text(articleTitle)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(3)
+            }
+            .frame(width: 275)
+            .padding(.bottom, 25)
+        }
     }
 }
