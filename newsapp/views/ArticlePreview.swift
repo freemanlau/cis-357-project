@@ -27,15 +27,17 @@ struct ArticlePreview: View {
                     .cornerRadius(30)
                     .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.accentColor, lineWidth: 2.5))
             }
-            HStack(alignment: .bottom) {
+            HStack {
                 LikeButton()
+                    .padding(.bottom, 30)
                 
                 Text(articleTitle)
+                    .frame(alignment: .topLeading)
                     .multilineTextAlignment(.leading)
                     .lineLimit(3)
             }
             .frame(width: 275)
-            .padding(.bottom, 25)
+            
         }
     }
 }
